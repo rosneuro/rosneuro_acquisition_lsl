@@ -9,9 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
 			 std_msgs
 			 pluginlib
 			 rosneuro_data
-			 rosneuro_msgs)
-find_package(rosneuro_acquisition ${ROSNEURO_ACQUISITION_MIN_VERSION} REQUIRED)
-
+			 rosneuro_msgs
+			 rosneuro_acquisition)
 
 find_package(PkgConfig)
 

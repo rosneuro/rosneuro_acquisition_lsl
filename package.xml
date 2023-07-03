@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rosneuro_acquisition_lsl</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>ROSNEURO Acquisition Plugin Package for LSL</description>
   <author email="luca.tonin@dei.unipd.it">Luca Tonin</author>
   <maintainer email="luca.tonin@dei.unipd.it">Luca Tonin</maintainer>
