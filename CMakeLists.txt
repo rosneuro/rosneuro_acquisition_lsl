@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
 			 rosneuro_acquisition)
 
 find_package(PkgConfig)
-
+find_package(GTest REQUIRED)
 SET(CMAKE_BUILD_TYPE RelWithDebInfo)
 find_library(LSL_LIBRARIES lsl REQUIRED)
 find_path(LSL_INCLUDE_DIRS lsl_cpp.h REQUIRED)
@@ -52,7 +52,13 @@ include_directories(${catkin_INCLUDE_DIRS}
 					${rosneuro_acquisition_INCLUDE_DIRS}
 					${LSL_INCLUDE_DIRS} 
 					include
+					include/${PROJECT_NAME}/
 )
+
+catkin_add_gtest(TestLslDevice test/TestLslDevice.cpp)
+target_link_libraries(TestLslDevice ${GTEST_BOTH_LIBRARIES} pthread gmock ${Eigen3_LIBRARIES})
+target_link_libraries(TestLslDevice ${PROJECT_NAME} ${catkin_LIBRARIES})
+include_directories(${GTEST_INCLUDE_DIRS} gmock pthread)
 
 add_library(${PROJECT_NAME} 
 			src/LSLDevice.cpp

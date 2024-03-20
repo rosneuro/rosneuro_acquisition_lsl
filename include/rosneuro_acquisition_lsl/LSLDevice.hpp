@@ -12,6 +12,7 @@
 #include <pluginlib/class_list_macros.h>
 #include <rosneuro_data/NeuroData.hpp>
 #include <rosneuro_acquisition/Device.hpp>
+#include <gtest/gtest_prod.h>
 
 namespace rosneuro {
 
@@ -45,6 +46,9 @@ class LSLDevice : public Device {
 		std::string		lsl_name_;
 		unsigned int	samplerate_;
 		unsigned int	framerate_;
+
+        FRIEND_TEST(LSLDeviceTest, Constructor);
+        FRIEND_TEST(LSLDeviceTest, Destructor);
 };
 
 
