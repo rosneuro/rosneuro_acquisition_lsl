@@ -78,7 +78,7 @@ add_dependencies(${PROJECT_NAME}
 ## Executables ##
 #################
 
-add_executable(lslclient src/lslclient.cpp)
+add_executable(lslclient example/run.cpp)
 target_link_libraries(lslclient rosneuro_acquisition_lsl)
 
 #################
